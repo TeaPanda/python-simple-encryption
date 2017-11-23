@@ -6,18 +6,23 @@ choice = ""
 message = ""
 
 while True:
-	pastkey = float(input("Is there any masterkey you want to use, leave empty for random masterkey\n"))
-	if pastkey == round(pastkey):
-		break
-	elif pastkey == "" :
-		break
-	else:
-		print("The masterkey is always a whole number")
+	try:
+		pastkey = str(input("Is there any masterkey you want to use, leave empty for random masterkey\n"))
+		if str(pastkey) == "":
+			break
+		elif float(pastkey) != round(float(pastkey)):
+			print("The masterkey is always a whole number")
+			continue
+		else:
+			break
+	except ValueError as e:
+		print("Only numbers please")
+		continue
 
 
 if pastkey <11 or pastkey >60 and not pastkey == "":
 	print("Liar, we don't have any masterkey like that, we will be chosing a random one for you\n")
-elif pastkey == "";
+elif pastkey == "":
 	pastkey = key + 10
 else:
 	key = pastkey - 10
