@@ -58,4 +58,4 @@ while choice != "-1":
 
 print("You masterkey was" , str(pastkey), "please take note of it if you want to decrypt your message again!")
 
-print("Press any key to exit")
+input("Press any key to exit")
